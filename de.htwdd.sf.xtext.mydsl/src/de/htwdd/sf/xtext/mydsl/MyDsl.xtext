@@ -2,8 +2,21 @@ grammar de.htwdd.sf.xtext.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 
 generate myDsl "http://www.htwdd.de/sf/xtext/mydsl/MyDsl"
 
-Model:
-	greetings+=Greeting*;
+S:
+	Titel ":" {Y};
 	
-Greeting:
-	'Hello' name=ID '!';
+Titel:
+	{Subst} {Verb};
+Y:
+	"Um" {Nutzen} ",";
+
+Subst:
+	// Wie werden Substantive gekennzeichnet Großschriebung
+;
+
+Verb:
+	// Kleinschreibung im Infinitiv
+;
+Nutzen:
+	
+;
