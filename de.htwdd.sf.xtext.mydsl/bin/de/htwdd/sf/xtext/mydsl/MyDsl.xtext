@@ -2,21 +2,12 @@ grammar de.htwdd.sf.xtext.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 
 generate myDsl "http://www.htwdd.de/sf/xtext/mydsl/MyDsl"
 
-S:
-	Titel ":" {Y};
+S: Titel ":" sentence=Y;
 	
-Titel:
-	{Subst} {Verb};
-Y:
-	"Um" {Nutzen} ",";
+Titel: s=Subst v=Verb;
+Y: "Um" s=Subst n=Nutzen "," "möchte ich als <Rolle> <Ziel/Wunsch>.";
 
-Subst:
-	// Wie werden Substantive gekennzeichnet Großschriebung
-;
+Nutzen: ID;
+terminal Subst:	("A".."Z")("a".."z")*;
+terminal Verb: ("a".."z")* "en" | "n" | "rn" | "ern" | "eln" | "ren";	
 
-Verb:
-	// Kleinschreibung im Infinitiv
-;
-Nutzen:
-	
-;
