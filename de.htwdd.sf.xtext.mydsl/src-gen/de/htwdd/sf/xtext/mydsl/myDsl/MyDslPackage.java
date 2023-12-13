@@ -58,103 +58,301 @@ public interface MyDslPackage extends EPackage
   MyDslPackage eINSTANCE = de.htwdd.sf.xtext.mydsl.myDsl.impl.MyDslPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link de.htwdd.sf.xtext.mydsl.myDsl.impl.ModelImpl <em>Model</em>}' class.
+   * The meta object id for the '{@link de.htwdd.sf.xtext.mydsl.myDsl.impl.SImpl <em>S</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.ModelImpl
-   * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.MyDslPackageImpl#getModel()
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.SImpl
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.MyDslPackageImpl#getS()
    * @generated
    */
-  int MODEL = 0;
+  int S = 0;
 
   /**
-   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+   * The number of structural features of the '<em>S</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__GREETINGS = 0;
+  int S_FEATURE_COUNT = 0;
 
   /**
-   * The number of structural features of the '<em>Model</em>' class.
+   * The meta object id for the '{@link de.htwdd.sf.xtext.mydsl.myDsl.impl.TitelImpl <em>Titel</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.TitelImpl
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.MyDslPackageImpl#getTitel()
+   * @generated
+   */
+  int TITEL = 1;
+
+  /**
+   * The feature id for the '<em><b>Sentence</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 1;
+  int TITEL__SENTENCE = S_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link de.htwdd.sf.xtext.mydsl.myDsl.impl.GreetingImpl <em>Greeting</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.GreetingImpl
-   * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.MyDslPackageImpl#getGreeting()
-   * @generated
-   */
-  int GREETING = 1;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>S</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING__NAME = 0;
+  int TITEL__S = S_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Greeting</em>' class.
+   * The feature id for the '<em><b>V</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING_FEATURE_COUNT = 1;
+  int TITEL__V = S_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Titel</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TITEL_FEATURE_COUNT = S_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link de.htwdd.sf.xtext.mydsl.myDsl.impl.YImpl <em>Y</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.YImpl
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.MyDslPackageImpl#getY()
+   * @generated
+   */
+  int Y = 2;
+
+  /**
+   * The feature id for the '<em><b>S</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int Y__S = 0;
+
+  /**
+   * The feature id for the '<em><b>N</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int Y__N = 1;
+
+  /**
+   * The feature id for the '<em><b>R</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int Y__R = 2;
+
+  /**
+   * The feature id for the '<em><b>Ziel</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int Y__ZIEL = 3;
+
+  /**
+   * The feature id for the '<em><b>Wunsch</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int Y__WUNSCH = 4;
+
+  /**
+   * The number of structural features of the '<em>Y</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int Y_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link de.htwdd.sf.xtext.mydsl.myDsl.impl.NutzenImpl <em>Nutzen</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.NutzenImpl
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.MyDslPackageImpl#getNutzen()
+   * @generated
+   */
+  int NUTZEN = 3;
+
+  /**
+   * The feature id for the '<em><b>V</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUTZEN__V = 0;
+
+  /**
+   * The number of structural features of the '<em>Nutzen</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUTZEN_FEATURE_COUNT = 1;
 
 
   /**
-   * Returns the meta object for class '{@link de.htwdd.sf.xtext.mydsl.myDsl.Model <em>Model</em>}'.
+   * Returns the meta object for class '{@link de.htwdd.sf.xtext.mydsl.myDsl.S <em>S</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Model</em>'.
-   * @see de.htwdd.sf.xtext.mydsl.myDsl.Model
+   * @return the meta object for class '<em>S</em>'.
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.S
    * @generated
    */
-  EClass getModel();
+  EClass getS();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.htwdd.sf.xtext.mydsl.myDsl.Model#getGreetings <em>Greetings</em>}'.
+   * Returns the meta object for class '{@link de.htwdd.sf.xtext.mydsl.myDsl.Titel <em>Titel</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Greetings</em>'.
-   * @see de.htwdd.sf.xtext.mydsl.myDsl.Model#getGreetings()
-   * @see #getModel()
+   * @return the meta object for class '<em>Titel</em>'.
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.Titel
    * @generated
    */
-  EReference getModel_Greetings();
+  EClass getTitel();
 
   /**
-   * Returns the meta object for class '{@link de.htwdd.sf.xtext.mydsl.myDsl.Greeting <em>Greeting</em>}'.
+   * Returns the meta object for the containment reference '{@link de.htwdd.sf.xtext.mydsl.myDsl.Titel#getSentence <em>Sentence</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Greeting</em>'.
-   * @see de.htwdd.sf.xtext.mydsl.myDsl.Greeting
+   * @return the meta object for the containment reference '<em>Sentence</em>'.
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.Titel#getSentence()
+   * @see #getTitel()
    * @generated
    */
-  EClass getGreeting();
+  EReference getTitel_Sentence();
 
   /**
-   * Returns the meta object for the attribute '{@link de.htwdd.sf.xtext.mydsl.myDsl.Greeting#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link de.htwdd.sf.xtext.mydsl.myDsl.Titel#getS <em>S</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.htwdd.sf.xtext.mydsl.myDsl.Greeting#getName()
-   * @see #getGreeting()
+   * @return the meta object for the attribute '<em>S</em>'.
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.Titel#getS()
+   * @see #getTitel()
    * @generated
    */
-  EAttribute getGreeting_Name();
+  EAttribute getTitel_S();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwdd.sf.xtext.mydsl.myDsl.Titel#getV <em>V</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>V</em>'.
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.Titel#getV()
+   * @see #getTitel()
+   * @generated
+   */
+  EAttribute getTitel_V();
+
+  /**
+   * Returns the meta object for class '{@link de.htwdd.sf.xtext.mydsl.myDsl.Y <em>Y</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Y</em>'.
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.Y
+   * @generated
+   */
+  EClass getY();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwdd.sf.xtext.mydsl.myDsl.Y#getS <em>S</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>S</em>'.
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.Y#getS()
+   * @see #getY()
+   * @generated
+   */
+  EAttribute getY_S();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.htwdd.sf.xtext.mydsl.myDsl.Y#getN <em>N</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>N</em>'.
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.Y#getN()
+   * @see #getY()
+   * @generated
+   */
+  EReference getY_N();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwdd.sf.xtext.mydsl.myDsl.Y#getR <em>R</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>R</em>'.
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.Y#getR()
+   * @see #getY()
+   * @generated
+   */
+  EAttribute getY_R();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwdd.sf.xtext.mydsl.myDsl.Y#getZiel <em>Ziel</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ziel</em>'.
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.Y#getZiel()
+   * @see #getY()
+   * @generated
+   */
+  EAttribute getY_Ziel();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwdd.sf.xtext.mydsl.myDsl.Y#getWunsch <em>Wunsch</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Wunsch</em>'.
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.Y#getWunsch()
+   * @see #getY()
+   * @generated
+   */
+  EAttribute getY_Wunsch();
+
+  /**
+   * Returns the meta object for class '{@link de.htwdd.sf.xtext.mydsl.myDsl.Nutzen <em>Nutzen</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Nutzen</em>'.
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.Nutzen
+   * @generated
+   */
+  EClass getNutzen();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwdd.sf.xtext.mydsl.myDsl.Nutzen#getV <em>V</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>V</em>'.
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.Nutzen#getV()
+   * @see #getNutzen()
+   * @generated
+   */
+  EAttribute getNutzen_V();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -180,40 +378,116 @@ public interface MyDslPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link de.htwdd.sf.xtext.mydsl.myDsl.impl.ModelImpl <em>Model</em>}' class.
+     * The meta object literal for the '{@link de.htwdd.sf.xtext.mydsl.myDsl.impl.SImpl <em>S</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.ModelImpl
-     * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.MyDslPackageImpl#getModel()
+     * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.SImpl
+     * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.MyDslPackageImpl#getS()
      * @generated
      */
-    EClass MODEL = eINSTANCE.getModel();
+    EClass S = eINSTANCE.getS();
 
     /**
-     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link de.htwdd.sf.xtext.mydsl.myDsl.impl.TitelImpl <em>Titel</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.TitelImpl
+     * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.MyDslPackageImpl#getTitel()
      * @generated
      */
-    EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
+    EClass TITEL = eINSTANCE.getTitel();
 
     /**
-     * The meta object literal for the '{@link de.htwdd.sf.xtext.mydsl.myDsl.impl.GreetingImpl <em>Greeting</em>}' class.
+     * The meta object literal for the '<em><b>Sentence</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.GreetingImpl
-     * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.MyDslPackageImpl#getGreeting()
      * @generated
      */
-    EClass GREETING = eINSTANCE.getGreeting();
+    EReference TITEL__SENTENCE = eINSTANCE.getTitel_Sentence();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>S</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+    EAttribute TITEL__S = eINSTANCE.getTitel_S();
+
+    /**
+     * The meta object literal for the '<em><b>V</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TITEL__V = eINSTANCE.getTitel_V();
+
+    /**
+     * The meta object literal for the '{@link de.htwdd.sf.xtext.mydsl.myDsl.impl.YImpl <em>Y</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.YImpl
+     * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.MyDslPackageImpl#getY()
+     * @generated
+     */
+    EClass Y = eINSTANCE.getY();
+
+    /**
+     * The meta object literal for the '<em><b>S</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute Y__S = eINSTANCE.getY_S();
+
+    /**
+     * The meta object literal for the '<em><b>N</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference Y__N = eINSTANCE.getY_N();
+
+    /**
+     * The meta object literal for the '<em><b>R</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute Y__R = eINSTANCE.getY_R();
+
+    /**
+     * The meta object literal for the '<em><b>Ziel</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute Y__ZIEL = eINSTANCE.getY_Ziel();
+
+    /**
+     * The meta object literal for the '<em><b>Wunsch</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute Y__WUNSCH = eINSTANCE.getY_Wunsch();
+
+    /**
+     * The meta object literal for the '{@link de.htwdd.sf.xtext.mydsl.myDsl.impl.NutzenImpl <em>Nutzen</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.NutzenImpl
+     * @see de.htwdd.sf.xtext.mydsl.myDsl.impl.MyDslPackageImpl#getNutzen()
+     * @generated
+     */
+    EClass NUTZEN = eINSTANCE.getNutzen();
+
+    /**
+     * The meta object literal for the '<em><b>V</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NUTZEN__V = eINSTANCE.getNutzen_V();
 
   }
 

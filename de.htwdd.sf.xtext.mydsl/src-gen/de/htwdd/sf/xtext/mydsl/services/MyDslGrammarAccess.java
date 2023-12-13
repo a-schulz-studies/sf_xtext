@@ -21,52 +21,150 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarElementFinder {
 	
-	public class ModelElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwdd.sf.xtext.mydsl.MyDsl.Model");
-		private final Assignment cGreetingsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cGreetingsGreetingParserRuleCall_0 = (RuleCall)cGreetingsAssignment.eContents().get(0);
-		
-		//Model:
-		//    greetings+=Greeting*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//greetings+=Greeting*
-		public Assignment getGreetingsAssignment() { return cGreetingsAssignment; }
-		
-		//Greeting
-		public RuleCall getGreetingsGreetingParserRuleCall_0() { return cGreetingsGreetingParserRuleCall_0; }
-	}
-	public class GreetingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwdd.sf.xtext.mydsl.MyDsl.Greeting");
+	public class SElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwdd.sf.xtext.mydsl.MyDsl.S");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHelloKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cExclamationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cTitelParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cSentenceAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cSentenceYParserRuleCall_2_0 = (RuleCall)cSentenceAssignment_2.eContents().get(0);
 		
-		//Greeting:
-		//    'Hello' name=ID '!';
+		//S: Titel ":" sentence=Y;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Hello' name=ID '!'
+		//Titel ":" sentence=Y
 		public Group getGroup() { return cGroup; }
 		
-		//'Hello'
-		public Keyword getHelloKeyword_0() { return cHelloKeyword_0; }
+		//Titel
+		public RuleCall getTitelParserRuleCall_0() { return cTitelParserRuleCall_0; }
 		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//":"
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//sentence=Y
+		public Assignment getSentenceAssignment_2() { return cSentenceAssignment_2; }
 		
-		//'!'
-		public Keyword getExclamationMarkKeyword_2() { return cExclamationMarkKeyword_2; }
+		//Y
+		public RuleCall getSentenceYParserRuleCall_2_0() { return cSentenceYParserRuleCall_2_0; }
+	}
+	public class TitelElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwdd.sf.xtext.mydsl.MyDsl.Titel");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cSAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cSSubstTerminalRuleCall_0_0 = (RuleCall)cSAssignment_0.eContents().get(0);
+		private final Assignment cVAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cVVerbTerminalRuleCall_1_0 = (RuleCall)cVAssignment_1.eContents().get(0);
+		
+		//Titel: s=Subst v=Verb;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//s=Subst v=Verb
+		public Group getGroup() { return cGroup; }
+		
+		//s=Subst
+		public Assignment getSAssignment_0() { return cSAssignment_0; }
+		
+		//Subst
+		public RuleCall getSSubstTerminalRuleCall_0_0() { return cSSubstTerminalRuleCall_0_0; }
+		
+		//v=Verb
+		public Assignment getVAssignment_1() { return cVAssignment_1; }
+		
+		//Verb
+		public RuleCall getVVerbTerminalRuleCall_1_0() { return cVVerbTerminalRuleCall_1_0; }
+	}
+	public class YElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwdd.sf.xtext.mydsl.MyDsl.Y");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cUmKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cSSubstTerminalRuleCall_1_0 = (RuleCall)cSAssignment_1.eContents().get(0);
+		private final Assignment cNAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNNutzenParserRuleCall_2_0 = (RuleCall)cNAssignment_2.eContents().get(0);
+		private final Keyword cMöchteIchAlsKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cRSubstTerminalRuleCall_4_0 = (RuleCall)cRAssignment_4.eContents().get(0);
+		private final Assignment cZielAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cZielSubstTerminalRuleCall_5_0 = (RuleCall)cZielAssignment_5.eContents().get(0);
+		private final Assignment cWunschAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cWunschVerbTerminalRuleCall_6_0 = (RuleCall)cWunschAssignment_6.eContents().get(0);
+		private final Keyword cFullStopKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		//Y: "Um" s=Subst n=Nutzen ", möchte ich als" r=Subst ziel=Subst wunsch=Verb ".";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"Um" s=Subst n=Nutzen ", möchte ich als" r=Subst ziel=Subst wunsch=Verb "."
+		public Group getGroup() { return cGroup; }
+		
+		//"Um"
+		public Keyword getUmKeyword_0() { return cUmKeyword_0; }
+		
+		//s=Subst
+		public Assignment getSAssignment_1() { return cSAssignment_1; }
+		
+		//Subst
+		public RuleCall getSSubstTerminalRuleCall_1_0() { return cSSubstTerminalRuleCall_1_0; }
+		
+		//n=Nutzen
+		public Assignment getNAssignment_2() { return cNAssignment_2; }
+		
+		//Nutzen
+		public RuleCall getNNutzenParserRuleCall_2_0() { return cNNutzenParserRuleCall_2_0; }
+		
+		//", möchte ich als"
+		public Keyword getMöchteIchAlsKeyword_3() { return cMöchteIchAlsKeyword_3; }
+		
+		//r=Subst
+		public Assignment getRAssignment_4() { return cRAssignment_4; }
+		
+		//Subst
+		public RuleCall getRSubstTerminalRuleCall_4_0() { return cRSubstTerminalRuleCall_4_0; }
+		
+		//ziel=Subst
+		public Assignment getZielAssignment_5() { return cZielAssignment_5; }
+		
+		//Subst
+		public RuleCall getZielSubstTerminalRuleCall_5_0() { return cZielSubstTerminalRuleCall_5_0; }
+		
+		//wunsch=Verb
+		public Assignment getWunschAssignment_6() { return cWunschAssignment_6; }
+		
+		//Verb
+		public RuleCall getWunschVerbTerminalRuleCall_6_0() { return cWunschVerbTerminalRuleCall_6_0; }
+		
+		//"."
+		public Keyword getFullStopKeyword_7() { return cFullStopKeyword_7; }
+	}
+	public class NutzenElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwdd.sf.xtext.mydsl.MyDsl.Nutzen");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cZuKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cVAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cVVerbTerminalRuleCall_1_0 = (RuleCall)cVAssignment_1.eContents().get(0);
+		
+		//Nutzen: "zu" v=Verb;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"zu" v=Verb
+		public Group getGroup() { return cGroup; }
+		
+		//"zu"
+		public Keyword getZuKeyword_0() { return cZuKeyword_0; }
+		
+		//v=Verb
+		public Assignment getVAssignment_1() { return cVAssignment_1; }
+		
+		//Verb
+		public RuleCall getVVerbTerminalRuleCall_1_0() { return cVVerbTerminalRuleCall_1_0; }
 	}
 	
 	
-	private final ModelElements pModel;
-	private final GreetingElements pGreeting;
+	private final SElements pS;
+	private final TitelElements pTitel;
+	private final YElements pY;
+	private final NutzenElements pNutzen;
+	private final TerminalRule tSubst;
+	private final TerminalRule tVerb;
 	
 	private final Grammar grammar;
 	
@@ -77,8 +175,12 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
-		this.pModel = new ModelElements();
-		this.pGreeting = new GreetingElements();
+		this.pS = new SElements();
+		this.pTitel = new TitelElements();
+		this.pY = new YElements();
+		this.pNutzen = new NutzenElements();
+		this.tSubst = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwdd.sf.xtext.mydsl.MyDsl.Subst");
+		this.tVerb = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwdd.sf.xtext.mydsl.MyDsl.Verb");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -108,24 +210,51 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 
 	
-	//Model:
-	//    greetings+=Greeting*;
-	public ModelElements getModelAccess() {
-		return pModel;
+	//S: Titel ":" sentence=Y;
+	public SElements getSAccess() {
+		return pS;
 	}
 	
-	public ParserRule getModelRule() {
-		return getModelAccess().getRule();
+	public ParserRule getSRule() {
+		return getSAccess().getRule();
 	}
 	
-	//Greeting:
-	//    'Hello' name=ID '!';
-	public GreetingElements getGreetingAccess() {
-		return pGreeting;
+	//Titel: s=Subst v=Verb;
+	public TitelElements getTitelAccess() {
+		return pTitel;
 	}
 	
-	public ParserRule getGreetingRule() {
-		return getGreetingAccess().getRule();
+	public ParserRule getTitelRule() {
+		return getTitelAccess().getRule();
+	}
+	
+	//Y: "Um" s=Subst n=Nutzen ", möchte ich als" r=Subst ziel=Subst wunsch=Verb ".";
+	public YElements getYAccess() {
+		return pY;
+	}
+	
+	public ParserRule getYRule() {
+		return getYAccess().getRule();
+	}
+	
+	//Nutzen: "zu" v=Verb;
+	public NutzenElements getNutzenAccess() {
+		return pNutzen;
+	}
+	
+	public ParserRule getNutzenRule() {
+		return getNutzenAccess().getRule();
+	}
+	
+	//terminal Subst:	("A".."Z"| 'Ä' |'Ö'| 'Ü')("a".."z"| 'ä' |'ö'| 'ü'|'ß')*;
+	public TerminalRule getSubstRule() {
+		return tSubst;
+	}
+	
+	////terminal Verb: ("a".."z")* "en" | "n" | "rn" | "ern" | "eln" | "ren";
+	//terminal Verb: ("a".."z" | 'ä' |'ö'| 'ü'|'ß' )* "en" | "ern" | "eln";
+	public TerminalRule getVerbRule() {
+		return tVerb;
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

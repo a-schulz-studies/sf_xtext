@@ -76,14 +76,24 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
     new MyDslSwitch<Adapter>()
     {
       @Override
-      public Adapter caseModel(Model object)
+      public Adapter caseS(S object)
       {
-        return createModelAdapter();
+        return createSAdapter();
       }
       @Override
-      public Adapter caseGreeting(Greeting object)
+      public Adapter caseTitel(Titel object)
       {
-        return createGreetingAdapter();
+        return createTitelAdapter();
+      }
+      @Override
+      public Adapter caseY(Y object)
+      {
+        return createYAdapter();
+      }
+      @Override
+      public Adapter caseNutzen(Nutzen object)
+      {
+        return createNutzenAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -108,31 +118,61 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link de.htwdd.sf.xtext.mydsl.myDsl.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link de.htwdd.sf.xtext.mydsl.myDsl.S <em>S</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.htwdd.sf.xtext.mydsl.myDsl.Model
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.S
    * @generated
    */
-  public Adapter createModelAdapter()
+  public Adapter createSAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.htwdd.sf.xtext.mydsl.myDsl.Greeting <em>Greeting</em>}'.
+   * Creates a new adapter for an object of class '{@link de.htwdd.sf.xtext.mydsl.myDsl.Titel <em>Titel</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.htwdd.sf.xtext.mydsl.myDsl.Greeting
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.Titel
    * @generated
    */
-  public Adapter createGreetingAdapter()
+  public Adapter createTitelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwdd.sf.xtext.mydsl.myDsl.Y <em>Y</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.Y
+   * @generated
+   */
+  public Adapter createYAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwdd.sf.xtext.mydsl.myDsl.Nutzen <em>Nutzen</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwdd.sf.xtext.mydsl.myDsl.Nutzen
+   * @generated
+   */
+  public Adapter createNutzenAdapter()
   {
     return null;
   }

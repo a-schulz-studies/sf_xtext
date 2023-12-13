@@ -65,8 +65,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     switch (eClass.getClassifierID())
     {
-      case MyDslPackage.MODEL: return createModel();
-      case MyDslPackage.GREETING: return createGreeting();
+      case MyDslPackage.S: return createS();
+      case MyDslPackage.TITEL: return createTitel();
+      case MyDslPackage.Y: return createY();
+      case MyDslPackage.NUTZEN: return createNutzen();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -78,10 +80,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * @generated
    */
   @Override
-  public Model createModel()
+  public S createS()
   {
-    ModelImpl model = new ModelImpl();
-    return model;
+    SImpl s = new SImpl();
+    return s;
   }
 
   /**
@@ -90,10 +92,34 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * @generated
    */
   @Override
-  public Greeting createGreeting()
+  public Titel createTitel()
   {
-    GreetingImpl greeting = new GreetingImpl();
-    return greeting;
+    TitelImpl titel = new TitelImpl();
+    return titel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Y createY()
+  {
+    YImpl y = new YImpl();
+    return y;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Nutzen createNutzen()
+  {
+    NutzenImpl nutzen = new NutzenImpl();
+    return nutzen;
   }
 
   /**

@@ -24,22 +24,40 @@ public interface MyDslFactory extends EFactory
   MyDslFactory eINSTANCE = de.htwdd.sf.xtext.mydsl.myDsl.impl.MyDslFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
+   * Returns a new object of class '<em>S</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
+   * @return a new object of class '<em>S</em>'.
    * @generated
    */
-  Model createModel();
+  S createS();
 
   /**
-   * Returns a new object of class '<em>Greeting</em>'.
+   * Returns a new object of class '<em>Titel</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Greeting</em>'.
+   * @return a new object of class '<em>Titel</em>'.
    * @generated
    */
-  Greeting createGreeting();
+  Titel createTitel();
+
+  /**
+   * Returns a new object of class '<em>Y</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Y</em>'.
+   * @generated
+   */
+  Y createY();
+
+  /**
+   * Returns a new object of class '<em>Nutzen</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Nutzen</em>'.
+   * @generated
+   */
+  Nutzen createNutzen();
 
   /**
    * Returns the package supported by this factory.

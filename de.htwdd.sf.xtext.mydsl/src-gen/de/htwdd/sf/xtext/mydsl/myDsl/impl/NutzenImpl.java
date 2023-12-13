@@ -3,55 +3,57 @@
  */
 package de.htwdd.sf.xtext.mydsl.myDsl.impl;
 
-import de.htwdd.sf.xtext.mydsl.myDsl.Greeting;
-import de.htwdd.sf.xtext.mydsl.myDsl.Model;
 import de.htwdd.sf.xtext.mydsl.myDsl.MyDslPackage;
+import de.htwdd.sf.xtext.mydsl.myDsl.Nutzen;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Model</b></em>'.
+ * An implementation of the model object '<em><b>Nutzen</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.htwdd.sf.xtext.mydsl.myDsl.impl.ModelImpl#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link de.htwdd.sf.xtext.mydsl.myDsl.impl.NutzenImpl#getV <em>V</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModelImpl extends MinimalEObjectImpl.Container implements Model
+public class NutzenImpl extends MinimalEObjectImpl.Container implements Nutzen
 {
   /**
-   * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
+   * The default value of the '{@link #getV() <em>V</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGreetings()
+   * @see #getV()
    * @generated
    * @ordered
    */
-  protected EList<Greeting> greetings;
+  protected static final String V_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getV() <em>V</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getV()
+   * @generated
+   * @ordered
+   */
+  protected String v = V_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModelImpl()
+  protected NutzenImpl()
   {
     super();
   }
@@ -64,7 +66,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.MODEL;
+    return MyDslPackage.Literals.NUTZEN;
   }
 
   /**
@@ -73,13 +75,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public EList<Greeting> getGreetings()
+  public String getV()
   {
-    if (greetings == null)
-    {
-      greetings = new EObjectContainmentEList<Greeting>(Greeting.class, this, MyDslPackage.MODEL__GREETINGS);
-    }
-    return greetings;
+    return v;
   }
 
   /**
@@ -88,14 +86,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setV(String newV)
   {
-    switch (featureID)
-    {
-      case MyDslPackage.MODEL__GREETINGS:
-        return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    String oldV = v;
+    v = newV;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.NUTZEN__V, oldV, v));
   }
 
   /**
@@ -108,8 +104,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case MyDslPackage.MODEL__GREETINGS:
-        return getGreetings();
+      case MyDslPackage.NUTZEN__V:
+        return getV();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,15 +115,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MyDslPackage.MODEL__GREETINGS:
-        getGreetings().clear();
-        getGreetings().addAll((Collection<? extends Greeting>)newValue);
+      case MyDslPackage.NUTZEN__V:
+        setV((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +137,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case MyDslPackage.MODEL__GREETINGS:
-        getGreetings().clear();
+      case MyDslPackage.NUTZEN__V:
+        setV(V_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -160,10 +154,27 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case MyDslPackage.MODEL__GREETINGS:
-        return greetings != null && !greetings.isEmpty();
+      case MyDslPackage.NUTZEN__V:
+        return V_EDEFAULT == null ? v != null : !V_EDEFAULT.equals(v);
     }
     return super.eIsSet(featureID);
   }
 
-} //ModelImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (v: ");
+    result.append(v);
+    result.append(')');
+    return result.toString();
+  }
+
+} //NutzenImpl

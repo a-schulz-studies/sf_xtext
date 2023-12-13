@@ -3,10 +3,10 @@
  */
 package de.htwdd.sf.xtext.mydsl.myDsl.impl;
 
-import de.htwdd.sf.xtext.mydsl.myDsl.Greeting;
-import de.htwdd.sf.xtext.mydsl.myDsl.Model;
 import de.htwdd.sf.xtext.mydsl.myDsl.MyDslFactory;
 import de.htwdd.sf.xtext.mydsl.myDsl.MyDslPackage;
+import de.htwdd.sf.xtext.mydsl.myDsl.Nutzen;
+import de.htwdd.sf.xtext.mydsl.myDsl.Titel;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -28,14 +28,28 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass modelEClass = null;
+  private EClass sEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass greetingEClass = null;
+  private EClass titelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass yEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nutzenEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -106,9 +120,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EClass getModel()
+  public EClass getS()
   {
-    return modelEClass;
+    return sEClass;
   }
 
   /**
@@ -117,9 +131,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getModel_Greetings()
+  public EClass getTitel()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+    return titelEClass;
   }
 
   /**
@@ -128,9 +142,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EClass getGreeting()
+  public EReference getTitel_Sentence()
   {
-    return greetingEClass;
+    return (EReference)titelEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -139,9 +153,108 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EAttribute getGreeting_Name()
+  public EAttribute getTitel_S()
   {
-    return (EAttribute)greetingEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)titelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTitel_V()
+  {
+    return (EAttribute)titelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getY()
+  {
+    return yEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getY_S()
+  {
+    return (EAttribute)yEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getY_N()
+  {
+    return (EReference)yEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getY_R()
+  {
+    return (EAttribute)yEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getY_Ziel()
+  {
+    return (EAttribute)yEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getY_Wunsch()
+  {
+    return (EAttribute)yEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNutzen()
+  {
+    return nutzenEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNutzen_V()
+  {
+    return (EAttribute)nutzenEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -175,11 +288,22 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     isCreated = true;
 
     // Create classes and their features
-    modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__GREETINGS);
+    sEClass = createEClass(S);
 
-    greetingEClass = createEClass(GREETING);
-    createEAttribute(greetingEClass, GREETING__NAME);
+    titelEClass = createEClass(TITEL);
+    createEReference(titelEClass, TITEL__SENTENCE);
+    createEAttribute(titelEClass, TITEL__S);
+    createEAttribute(titelEClass, TITEL__V);
+
+    yEClass = createEClass(Y);
+    createEAttribute(yEClass, Y__S);
+    createEReference(yEClass, Y__N);
+    createEAttribute(yEClass, Y__R);
+    createEAttribute(yEClass, Y__ZIEL);
+    createEAttribute(yEClass, Y__WUNSCH);
+
+    nutzenEClass = createEClass(NUTZEN);
+    createEAttribute(nutzenEClass, NUTZEN__V);
   }
 
   /**
@@ -211,13 +335,25 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    titelEClass.getESuperTypes().add(this.getS());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Greetings(), this.getGreeting(), null, "greetings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(sEClass, de.htwdd.sf.xtext.mydsl.myDsl.S.class, "S", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(greetingEClass, Greeting.class, "Greeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGreeting_Name(), ecorePackage.getEString(), "name", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(titelEClass, Titel.class, "Titel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTitel_Sentence(), this.getY(), null, "sentence", null, 0, 1, Titel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTitel_S(), ecorePackage.getEString(), "s", null, 0, 1, Titel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTitel_V(), ecorePackage.getEString(), "v", null, 0, 1, Titel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(yEClass, de.htwdd.sf.xtext.mydsl.myDsl.Y.class, "Y", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getY_S(), ecorePackage.getEString(), "s", null, 0, 1, de.htwdd.sf.xtext.mydsl.myDsl.Y.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getY_N(), this.getNutzen(), null, "n", null, 0, 1, de.htwdd.sf.xtext.mydsl.myDsl.Y.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getY_R(), ecorePackage.getEString(), "r", null, 0, 1, de.htwdd.sf.xtext.mydsl.myDsl.Y.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getY_Ziel(), ecorePackage.getEString(), "ziel", null, 0, 1, de.htwdd.sf.xtext.mydsl.myDsl.Y.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getY_Wunsch(), ecorePackage.getEString(), "wunsch", null, 0, 1, de.htwdd.sf.xtext.mydsl.myDsl.Y.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(nutzenEClass, Nutzen.class, "Nutzen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNutzen_V(), ecorePackage.getEString(), "v", null, 0, 1, Nutzen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -31,9 +31,19 @@ public class MyDslParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, MyDslGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getGreetingAccess().getGroup(), "rule__Greeting__Group__0");
-			builder.put(grammarAccess.getModelAccess().getGreetingsAssignment(), "rule__Model__GreetingsAssignment");
-			builder.put(grammarAccess.getGreetingAccess().getNameAssignment_1(), "rule__Greeting__NameAssignment_1");
+			builder.put(grammarAccess.getSAccess().getGroup(), "rule__S__Group__0");
+			builder.put(grammarAccess.getTitelAccess().getGroup(), "rule__Titel__Group__0");
+			builder.put(grammarAccess.getYAccess().getGroup(), "rule__Y__Group__0");
+			builder.put(grammarAccess.getNutzenAccess().getGroup(), "rule__Nutzen__Group__0");
+			builder.put(grammarAccess.getSAccess().getSentenceAssignment_2(), "rule__S__SentenceAssignment_2");
+			builder.put(grammarAccess.getTitelAccess().getSAssignment_0(), "rule__Titel__SAssignment_0");
+			builder.put(grammarAccess.getTitelAccess().getVAssignment_1(), "rule__Titel__VAssignment_1");
+			builder.put(grammarAccess.getYAccess().getSAssignment_1(), "rule__Y__SAssignment_1");
+			builder.put(grammarAccess.getYAccess().getNAssignment_2(), "rule__Y__NAssignment_2");
+			builder.put(grammarAccess.getYAccess().getRAssignment_4(), "rule__Y__RAssignment_4");
+			builder.put(grammarAccess.getYAccess().getZielAssignment_5(), "rule__Y__ZielAssignment_5");
+			builder.put(grammarAccess.getYAccess().getWunschAssignment_6(), "rule__Y__WunschAssignment_6");
+			builder.put(grammarAccess.getNutzenAccess().getVAssignment_1(), "rule__Nutzen__VAssignment_1");
 		}
 	}
 	
