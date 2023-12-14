@@ -7,18 +7,16 @@ S: Titel ":" sentence=Y;
 Titel: s=Subst v=Verb;
 Y: "Um" s=Subst n=Nutzen ", möchte ich als" r=Subst ziel=Subst wunsch=Verb ".";
 
-Nutzen: ("zu " v=Verb) | v=VerbNutzen ;
+Nutzen: v=VerbNutzen ;
 terminal Subst:	("A".."Z"| 'Ä' |'Ö'| 'Ü')("a".."z"| 'ä' |'ö'| 'ü'|'ß')*;
 //terminal Verb: ("a".."z")* "en" | "n" | "rn" | "ern" | "eln" | "ren";
 
 terminal Verb: ("a".."z" | 'ä' |'ö'| 'ü'|'ß' )* "en" | "ern" | "eln";
 
-VerbNutzen: Expr;
-
-terminal Expr: "zu" ohneZ* "zuzu" Verb;
+terminal VerbNutzen: "zu" ohneZU "zuzu" Verb;
 
 //terminal alles ohne zu auf ein z darf kein u folgen
-terminal ohneZ: ("a".."z" | 'ä' |'ö'| 'ü'|'ß' ) ("a".."t" | "v".."z" | 'ä' |'ö'| 'ü'|'ß' );
+terminal ohneZU: ("a".."z" | 'ä' |'ö'| 'ü'|'ß' ) ("a".."t" | "v".."z" | 'ä' |'ö'| 'ü'|'ß' )*;
 
 //Expr: TerminalExpr(TerminalExpr)*;
 
