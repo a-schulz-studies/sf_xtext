@@ -13,9 +13,18 @@ terminal Subst:	("A".."Z"| 'Ä' |'Ö'| 'Ü')("a".."z"| 'ä' |'ö'| 'ü'|'ß')*;
 
 terminal Verb: ("a".."z" | 'ä' |'ö'| 'ü'|'ß' )* "en" | "ern" | "eln";
 
-terminal VerbNutzen: "zu" ohneZU "zuzu" Verb;
+terminal VerbNutzen: "zu" twoChars* "zuzu" Verb;
 
 //terminal alles ohne zu auf ein z darf kein u folgen
+// terminal fragment everything but no z
+// terminal fragment everything z at first but no u
+// terminal fragment one or two but no zu
+
+terminal fragment noZ: ("a".."y" | 'ä' |'ö'| 'ü'|'ß' );
+terminal fragment ZbutNoU: ("a".."z" | 'ä' |'ö'| 'ü'|'ß' ) ("a".."t" | "v".."z" | 'ä' |'ö'| 'ü'|'ß' );
+terminal fragment noU: ("a".."t" | "v".."z" | 'ä' |'ö'| 'ü'|'ß' );
+terminal fragment twoChars: noZ | ZbutNoU noU*;
+// zwei chars erstes terminal | zweites terminal
 terminal ohneZU: ("a".."z" | 'ä' |'ö'| 'ü'|'ß' ) ("a".."t" | "v".."z" | 'ä' |'ö'| 'ü'|'ß' )*;
 
 //Expr: TerminalExpr(TerminalExpr)*;
