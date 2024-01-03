@@ -1,0 +1,59 @@
+grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+
+S: Titel ":" sentence=Y;
+	
+Titel: s=Subst v=Verb;
+Y: "Um" s=Subst n=Nutzen ", möchte ich als" r=Subst ziel=Subst wunsch=Verb ".";
+
+Nutzen: v=VerbNutzen ;
+
+terminal Subst:	("A".."Z"| 'Ä' |'Ö'| 'Ü')("a".."z"| 'ä' |'ö'| 'ü'|'ß')*;
+
+terminal Verb: ("a".."z" | 'ä' |'ö'| 'ü'|'ß' )* "en" | "ern" | "eln";
+
+VerbNutzen: "zu" v=VerbOhneZu | v=VerbMitEinemZu | v=VerbMitZweiZu | v=VerbMitDreiZu;
+
+// VerbOhneZu: Auf ein Z darf kein U folgen
+// Verbendungen fehlen
+terminal VerbOhneZu: noZU* "en" | "ern" | "eln";
+
+terminal noZU: (alleBuchstaben keinU)| (keinZ alleBuchstaben);
+terminal fragment alleBuchstaben: ("a".."z" | 'ä' |'ö'| 'ü'|'ß' );
+terminal fragment keinU:("a".."t" | "v".."z" | 'ä' |'ö'| 'ü'|'ß');
+terminal fragment keinZ:("a".."y" | 'ä' |'ö'| 'ü'|'ß' );
+
+// VerbMitEinemZu: Auf ein Z darf nur einmal ein U folgen
+terminal VerbMitEinemZu: z u noZU* "en" | "ern" | "eln";
+terminal fragment z: "z";
+terminal fragment u: "u";
+
+// VerbMitZweiZu: Auf ein Z darf einmal ein U folgen und das zweimal
+terminal VerbMitZweiZu: z u z u noZU* "en" | "ern" | "eln";
+
+// VerbMitZweiZu: Auf ein Z darf einmal ein U folgen und das dreimal
+terminal VerbMitDreiZu: z u z u z u noZU* "en" | "ern" | "eln";
+
+//terminal VerbNutzen: z u twoChars* "en" | "ern" | "eln";
+
+// Am Ende darf keine Leertaste sein
+//terminal zutwoChars: twoChars*;
+
+//evtl Fragment bei twoChars
+terminal twoChars: noZ | noZU;
+//terminal noZU: ZbutNoU noU;
+terminal fragment noZ: ("a".."y" | 'ä' |'ö'| 'ü'|'ß' );
+terminal fragment ZbutNoU: ("a".."z" | 'ä' |'ö'| 'ü'|'ß' ) ("a".."t" | "v".."z" | 'ä' |'ö'| 'ü'|'ß' );
+terminal fragment noU: ("a".."t" | "v".."z" | 'ä' |'ö'| 'ü'|'ß' );
+
+//terminal alles ohne zu auf ein z darf kein u folgen
+// terminal fragment everything but no z
+// terminal fragment everything z at first but no u
+// terminal fragment one or two but no zu
+
+//Expr: TerminalExpr(TerminalExpr)*;
+
+//TerminalExpr:"zu" | Expr;
+
+// Wenn ein zu zum Verbstamm gehört, dann wird nochmal ein präfix eingefügt. Linksrekursion einmal
